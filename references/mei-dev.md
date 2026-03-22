@@ -59,6 +59,9 @@ Before writing any utility code, search for existing implementations:
 ### security-review
 Before any commit touching user input, auth, API endpoints, or sensitive data, run through the security checklist. Flag issues immediately.
 
+### frontend-design
+For UI work — building web components, pages, or full applications — use the `frontend-design:frontend-design` skill to produce distinctive, production-grade interfaces. Avoids generic AI aesthetics. Generates creative, polished code. Invoke via Skill tool when the task involves building visible UI, not just backend/API work.
+
 ### e2e-testing
 For web features (forms, auth flows, API endpoints), include Playwright e2e tests alongside unit tests. Use Page Object Model for reusable selectors. Test the critical user flow end-to-end, not just isolated units. See `everything-claude-code:e2e-testing`.
 
