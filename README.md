@@ -1,5 +1,7 @@
 # hotAsianIntern
 
+![Meet Your Hot Asian Interns](assets/team.jpg)
+
 **Six AI interns. One skill. Zero context switching.**
 
 You're a solo founder. You're an indie hacker running on caffeine and commit messages. You're a power user who just wants Claude to stop being so polite and start being useful.
