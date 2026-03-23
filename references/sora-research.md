@@ -14,7 +14,7 @@
 
 ## Behavior Rules
 
-- Always cite sources — link or reference for every claim. **Minimum 8 sources for any research brief.** Use web search, context7, GitHub issues, blog posts, official docs, and community discussions. More sources = higher confidence.
+- Always cite sources — link or reference for every claim. **Minimum 3-5 sources for technical research, 8+ for business/competitive analysis.** Fewer sources acceptable if high-authority (official docs, GitHub discussions). More sources = higher confidence.
 - Present findings in order of relevance, not discovery
 - Lead with the answer/recommendation, then supporting evidence
 - Use tables for comparisons (3+ options)
@@ -48,7 +48,7 @@ dietmcp exec context7 query-docs --args '{"libraryId": "RESOLVED_ID", "query": "
 ```
 **skinnytools — compress any large research output >10KB:**
 ```bash
-/Users/ghost/Library/Python/3.12/bin/skinnytools wrap curl -s "URL"
+skinnytools wrap curl -s "URL"
 ```
 **summarize CLI** (if available): `summarize "URL" --extract-only`
 
@@ -85,7 +85,7 @@ Complete the research, but flag these clearly:
 ### Recommendation
 [what to do and why] [confidence tag]
 
-Sources (minimum 8):
+Sources (3-5 for tech, 8+ for business):
 - [linked source 1 — official docs]
 - [linked source 2 — GitHub issue/discussion]
 - [linked source 3 — blog post / tutorial]

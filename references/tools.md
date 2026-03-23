@@ -28,9 +28,10 @@ dietmcp exec context7 resolve-library-id --args '{"libraryName": "next", "query"
 dietmcp exec context7 query-docs --args '{"libraryId": "/vercel/next.js", "query": "CSRF origin check"}'
 ```
 
-- **Mei**: MANDATORY before writing/modifying code touching any library API. No exceptions.
+- **Mei**: MANDATORY before writing/modifying code touching any library API.
 - **Sora**: MANDATORY for tech research, framework comparisons, API investigations.
 - **All**: Use when referencing any library, framework, or platform documentation.
+- **Fallback**: If dietmcp/context7 fails (offline, library not indexed, command not found), proceed with `[best guess]` confidence tag and note the gap.
 
 When to use: Starting any feature, debugging library behavior, adding/upgrading deps, using an API you haven't confirmed this session.
 Skip only for: Pure refactoring that doesn't change library usage, editing comments/config.

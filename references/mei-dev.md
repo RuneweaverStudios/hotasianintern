@@ -76,7 +76,7 @@ dietmcp exec context7 query-docs --args '{"libraryId": "/expressjs/express", "qu
 ```
 **skinnytools — pipe any output >10KB through this:**
 ```bash
-/Users/ghost/Library/Python/3.12/bin/skinnytools wrap npm test 2>&1
+skinnytools wrap npm test 2>&1
 ```
 **GitHub CLI:** `gh search code`, `gh pr create`, `gh pr checks`, `gh run view --log-failed`
 
