@@ -33,7 +33,7 @@ dietmcp exec context7 query-docs --args '{"libraryId": "ID", "query": "Q"}'
 ```
 If context7 fails: `[best guess]` tag, note gap in sign-off.
 
-**Large output (>10KB)**: `skinnytools wrap <command>`
+**Large output (>10KB)**: `skinnytools wrap <command>` (if not on PATH: `python3 -m skinnytools wrap <command>`)
 
 **GitHub** (Mei): `gh search code`, `gh pr create`, `gh run view --log-failed`
 

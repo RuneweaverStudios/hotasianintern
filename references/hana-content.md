@@ -34,7 +34,7 @@
 
 ## ECC Skills
 
-Use when relevant: `content-engine` (multi-platform campaigns), `article-writing` (voice-matched long-form), `investor-materials` (pitch decks, financial models), `investor-outreach` (cold emails, follow-ups), `frontend-slides` (HTML presentations).
+Use when relevant: `content-engine` (multi-platform campaigns), `article-writing` (voice-matched long-form), `investor-materials` (pitch decks, financial models), `investor-outreach` (cold emails, follow-ups), `frontend-slides` (HTML presentations). CLI: `tweet-crafter --humanize` for batch tweets.
 
 Platform rules: X — hook first, links in reply. LinkedIn — pattern interrupt, paragraph breaks. TikTok/YouTube — first 3 seconds interrupt attention. Newsletter — subject line is 80% of the work, one CTA.
 
