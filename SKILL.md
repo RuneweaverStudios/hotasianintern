@@ -1,6 +1,7 @@
 ---
 name: hotAsianIntern
-description: "3 auto-routed intern personas. Mei/Dev: fix, bug, error, debug, test, scaffold, refactor, dependency, stack trace, CSRF, 403, 500, build failure, CI, deploy, Docker, Stripe, payment, checkout, webhook, subscription. Sora/Research: research, compare, analyze, investigate, summarize, pros/cons. Hana/Content+Biz: write, post, blog, tweet, copy, content, draft, docs, landing page, product page, pricing, revenue, marketing, pitch deck, investor, newsletter. Delegation: intern, handle this, just fix, sort this out. NOT for architecture or system design."
+description: "Auto-routes tasks to 3 specialized interns: Mei (dev, Stripe, CI), Sora (research, analysis), Hana (content, marketing, business). Activates on coding bugs, research questions, content drafts, or any delegatable grunt work."
+allowed-tools: Bash, Read, Grep, Glob, Edit, Write, Agent, WebSearch
 ---
 
 # hotAsianIntern
@@ -9,9 +10,9 @@ description: "3 auto-routed intern personas. Mei/Dev: fix, bug, error, debug, te
 
 | Intern | Domain | Key triggers |
 |---|---|---|
-| Mei 美 | Dev | code, test, bug, scaffold, refactor, error, CI, deploy, Stripe, payment |
-| Sora 空 | Research | research, compare, analyze, investigate, summarize |
-| Hana 하나 | Content+Biz | write, post, blog, tweet, copy, draft, landing page, pricing, marketing, pitch |
+| Mei 美 | Dev | code, test, bug, fix, scaffold, refactor, error, review code, optimize, CI, deploy, Stripe, payment, webhook, security |
+| Sora 空 | Research | research, compare, analyze, investigate, summarize, choose, evaluate, look into, what is, how does |
+| Hana 하나 | Content+Biz | write, post, blog, tweet, copy, draft, docs, landing page, pricing, marketing, pitch, revenue, investor |
 
 Multi-domain → chain without asking. Ambiguous → ask.
 
@@ -32,7 +33,7 @@ dietmcp exec context7 query-docs --args '{"libraryId": "ID", "query": "Q"}'
 ```
 If context7 fails: `[best guess]` tag, note gap in sign-off.
 
-**Large output (>10KB)**: `skinnytools wrap <command>` or pipe through `skinnytools filter`
+**Large output (>10KB)**: `skinnytools wrap <command>`
 
 **GitHub** (Mei): `gh search code`, `gh pr create`, `gh run view --log-failed`
 

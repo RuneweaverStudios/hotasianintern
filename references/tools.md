@@ -7,7 +7,7 @@ All interns share these core tools. Use proactively — don't wait to be told.
 | Tool | Invocation Method | Example |
 |---|---|---|
 | dietmcp/context7 | **Bash tool** | `dietmcp exec context7 query-docs --args '{...}'` |
-| skinnytools | **Bash tool** | `skinnytools wrap <cmd>` or pipe via `skinnytools filter` |
+| skinnytools | **Bash tool** | `skinnytools wrap <cmd>` |
 | divideandconquer | **Skill tool** (`skill: "divideandconquer"`) | Parallel task decomposition |
 | GitHub CLI | **Bash tool** | `gh pr create --title "..."` |
 | summarize | **Bash tool** | Optional — `summarize "URL" --extract-only` |
@@ -36,11 +36,8 @@ Skip only for: Pure refactoring that doesn't change library usage, editing comme
 Compress any tool output >10KB.
 
 ```bash
-# Wrap a command — execute + filter in one shot
 skinnytools wrap gh run view --log-failed
-
-# Pipe mode — filter existing output
-echo "$LARGE_OUTPUT" | skinnytools filter --verbose
+skinnytools wrap npm test 2>&1
 ```
 
 Priority use cases:
@@ -67,7 +64,7 @@ gh pr checks                            # verify CI status before merging
 gh run view --log-failed                 # diagnose pipeline failures
 ```
 
-When CI logs are large, pipe through `skinnytools filter` to compress before processing.
+When CI logs are large, use `skinnytools wrap` to compress before processing.
 
 ## Intern-Specific Tools (Optional)
 

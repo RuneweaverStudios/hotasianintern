@@ -28,7 +28,7 @@ hana:  "Thread: 2 variations, char counts included. Pricing page:
 
 ## What This Is
 
-A [Claude Code](https://docs.anthropic.com/en/docs/claude-code) skill that gives you three specialized interns who activate automatically based on what you're doing. No slash commands. No configuration. Just talk naturally and the right intern shows up.
+A [Claude Code](https://docs.anthropic.com/en/docs/claude-code) skill that gives you three specialized interns who activate automatically based on your request. No slash commands. No configuration. Just talk naturally and the right intern shows up.
 
 ```
 hotAsianIntern/
@@ -82,7 +82,7 @@ Writes platform-native content AND handles business strategy — product pages, 
 - Pricing strategy? Tier structure, anchor pricing, bear/base/bull revenue projections
 - Pitch deck? Consistent metrics across every slide (she checks)
 
-**Words Hana will never write:** "In today's fast-paced world", "dive deep", "game-changer", "leverage", "at the end of the day", "it's worth noting", "delve"
+Hana has a banned phrase list — no "dive deep", no "game-changer", no "delve." If it sounds like ChatGPT wrote it, she won't.
 
 ---
 
@@ -136,19 +136,21 @@ That's it. Next time Claude Code starts, the skill is active. No config, no setu
 
 ### Verify it works
 
-Just talk to Claude naturally:
+Try one of these:
 
 ```
-you: "hey can you look into the best headless CMS options for our blog"
+"scaffold a REST API with auth and tests"          → Mei activates
+"compare the top 3 headless CMS options"            → Sora activates
+"draft a launch tweet + landing page hero copy"     → Hana activates
 ```
 
-If Sora shows up with a comparison table and confidence tags, you're good.
+If you see confidence tags (`[sure thing]`, `[pretty confident]`) and a sign-off line, the skill is working.
 
 ---
 
 ## Benchmarks
 
-We ran end-to-end evals across 5 real-world scenarios, comparing the skill against vanilla Claude (no skill) and against the previous version (v1).
+> **Note**: These benchmarks were run against the previous 6-intern version (v1/v2). The current 3-intern version (v3) consolidates domains but maintains the same behavioral patterns. Fresh evals are pending.
 
 ### vs No Skill (Baseline)
 
@@ -159,15 +161,6 @@ We ran end-to-end evals across 5 real-world scenarios, comparing the skill again
 | **Avg Response Time** | 72s | 136s | -64s (faster) |
 
 The skill is both **cheaper and faster** than no skill. Without it, Claude goes on tangents — the Dev eval hit 44K tokens building an entire project when asked to scaffold. The skill keeps scope focused.
-
-### vs v1 (Previous Version)
-
-| Metric | v2 (current) | v1 (previous) | Delta |
-|---|---|---|---|
-| **Assertion Pass Rate** | **100%** (30/30) | 90% (27/30) | **+10%** |
-| **Avg Tokens** | 29,706 | 26,720 | +2,986 (+11%) |
-
-v2 wins on **behavioral reliability** — the 3 assertions v1 failed are all enforcement issues (missing security escalation, missing content variations). v2's reference files make these behaviors consistent.
 
 ### The Safety Win
 
@@ -211,7 +204,7 @@ When you ask Claude to "scaffold a webhooks endpoint with signature validation,"
 
 - Teams that need Claude to be neutral/corporate (the interns have personality)
 - People who want Claude to make decisions for them (the interns present options and recommend — they don't decide)
-- Architectural decisions, system design, or high-stakes code review (above intern pay grade)
+- Architectural decisions or system redesigns — this skill shines on execution tasks. For architecture, pair with extended thinking or the architect agent
 
 ---
 
@@ -245,6 +238,19 @@ The interns plug into your existing toolkit. All tools are optional — the skil
 | **divideandconquer** | [Install skill](https://github.com/RuneweaverStudios/divideandconquer) | Decomposes complex tasks into parallel waves for concurrent execution |
 | **GitHub CLI** | [Install gh](https://cli.github.com/) | PR creation, code search, CI monitoring, issue tracking |
 | **ECC skills** | [Install ECC](https://github.com/anthropics/everything-claude-code) | 12+ battle-tested skills mapped to intern domains (TDD, API design, deployment patterns, etc.) |
+
+---
+
+## Troubleshooting
+
+**The wrong intern activates (or none do)**
+Your message may be ambiguous. Try being more explicit: "Mei, scaffold a component" or "Sora, research this." The skill routes by keywords — if no keywords match, it won't activate.
+
+**Mei isn't using context7 / skinnytools**
+Make sure `dietmcp` and `skinnytools` are installed: `pip install dietmcp skinnytools`. The skill works without them but falls back to `[best guess]` confidence.
+
+**The skill doesn't load at all**
+Check that it's in `~/.claude/skills/hotAsianIntern/SKILL.md`. The directory name matters — Claude Code scans `~/.claude/skills/` for `SKILL.md` files.
 
 ---
 
