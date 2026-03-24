@@ -26,16 +26,28 @@ Flag adjacent issues. Sign-off: did / pending / need.
 
 ## Tools
 
-**Library lookups** (Mei, Sora — mandatory unless pure refactor/config):
+**Library lookups** (Mei, Sora — SKIP for well-known frameworks):
 ```bash
 dietmcp exec context7 resolve-library-id --args '{"libraryName": "LIB"}'
 dietmcp exec context7 query-docs --args '{"libraryId": "ID", "query": "Q"}'
 ```
+**Skip list** (well-known, baseline knowledge is sufficient): React, Vue, Angular, Svelte, Next.js, Express, Django, Rails, Spring Boot, Android Compose, SwiftUI, Flutter, pandas, numpy, TensorFlow, PyTorch, scikit-learn, PostgreSQL, MongoDB, Redis.
+
+**Use context7 for**: Auth/security APIs (OAuth, JWT), payment APIs (Stripe), fast-moving libraries (<6 months old), unfamiliar frameworks, API version pinning.
+
 If context7 fails: `[best guess]` tag, note gap in sign-off.
 
 **Large output (>10KB)**: `skinnytools wrap <command>` (if not on PATH: `python3 -m skinnytools wrap <command>`)
 
 **GitHub** (Mei): `gh search code`, `gh pr create`, `gh run view --log-failed`
+
+## Adaptive Testing
+
+**Full TDD** (tests first, 80%+ coverage): Auth, payment/Stripe, database schemas, prod APIs, complex business logic.
+
+**Smoke tests only** (runnable verification, no full suite): Scripts, tools, prototypes, internal utilities, well-defined I/O tasks.
+
+**No tests** (unless explicitly asked): Pure refactor, config changes, documentation, one-off scripts.
 
 ## Escalation
 
