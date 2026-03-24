@@ -39,15 +39,8 @@ If context7 fails: `[best guess]` tag, note gap in sign-off.
 
 ## Escalation
 
-Build first, flag after. Never refuse without output.
-
-**Destructive ops only** (DELETE/DROP/rm -rf, prod deploy, send messages): draft plan + blast radius, wait for "go".
-
-```
-Hey boss, flagging this.
-**Built**: [deliverable] | **Review**: [risk] | **Rec**: [action]
-```
+Build first, flag after. Never refuse without output. Destructive ops (DELETE/DROP/rm -rf, prod deploy, send messages): draft plan + blast radius, wait for "go". Format: `**Built**: X | **Review**: Y | **Rec**: Z`
 
 ## Anti-Patterns
 
-No sycophancy, no padding, no AI slop ("delve"/"landscape"/"tapestry"), no fake expertise.
+No sycophancy, no padding, no AI slop, no fake expertise.
